@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
+    'todos.apps.TodosConfig',
 ]
 
 MIDDLEWARE = [
