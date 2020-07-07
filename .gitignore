@@ -1,5 +1,1 @@
 .vscode/
-templates/_base.html
-templates/account/logout.html
-templates/home.html
-
