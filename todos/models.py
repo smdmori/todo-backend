@@ -1,9 +1,11 @@
 from django.db import models
 from users.models import CustomUser
+from categories.models import Subject
 
 # Create your models here.
 class Todo(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    category = models.ForeignKey(Subject, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
