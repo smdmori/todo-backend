@@ -2,7 +2,6 @@ from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# checked #
 class CustomUser(AbstractUser):
     pass
 
@@ -32,42 +31,4 @@ class Todo(models.Model):
     
     def __str__(self):
         return self.title # name to be shown when called
-
-
-
-
-# class CategoryItem(models.Model):
-    # todo = models.ForeignKey(Todo, related_name='membership')
-    # category = models.ForeignKey(Category, related_name='membership')
-    # name = models.CharField(max_length=100)
-# 
-    # def __unicode__(self):
-        # return "%s is in category %s (as %s)" % (self.todo, self.category, self.name)
-# 
-
-class Person(models.Model):
-    name = models.CharField(max_length=200)
-    groups = models.ManyToManyField('Group', through='GroupMember', related_name='people')
-    
-    class Meta:
-        ordering = ['name']
-    
-    def __unicode__(self):
-        return self.name
-    
-class Group(models.Model):
-    name = models.CharField(max_length=200)
-    
-    class Meta:
-        ordering = ['name']
-    
-    def __unicode__(self):
-        return self.name
-    
-class GroupMember(models.Model):
-    person = models.ForeignKey(Person, related_name='membership', on_delete=models.CASCADE)
-    group = models.ForeignKey(Group, related_name='membership', on_delete=models.CASCADE)
-    type = models.CharField(max_length=100)
-    
-    def __unicode__(self):
-        return "%s is in group %s (as %s)" % (self.person, self.group, self.type)
+        
