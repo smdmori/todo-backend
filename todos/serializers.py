@@ -1,16 +1,14 @@
 from rest_framework import serializers
-from .models import Todo
-# from categories.models import Category
-
-
-# class CategorySerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = Category
-#         fields = ('subject',)
+from .models import Todo, Category
 
 class TodoSerializer(serializers.ModelSerializer):
-    # category = CategorySerializer()
+
     class Meta:
         model = Todo
-        fields = ('id', 'author', 'title', 'body', 'created_at',)
+        fields = ('id', 'author', 'categories','title', 'body', 'done', 'updated_at', 'created_at', 'due_date',)
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ('id', 'subject',)

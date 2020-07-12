@@ -37,14 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # 3rd party
     'rest_framework',
-
+    'rest_framework.authtoken',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth',
+    'rest_auth.registration',
+    
     # Local
-    'users.apps.UsersConfig',
     'todos.apps.TodosConfig',
-    'categories.apps.CategoriesConfig',
+    # 'users.apps.UsersConfig',
+    # 'categories.apps.CategoriesConfig',
+    # 'fortesting.apps.FortestingConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +96,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': 5432
+        'PORT': 5432,
     }
 }
 
@@ -131,11 +139,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL= 'users.CustomUser'
+AUTH_USER_MODEL= 'todos.CustomUser'
 
 # rest framework config
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.AllowAny',
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
+# checked #
