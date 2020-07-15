@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
-from .models import Todo
+from .models import Todo, CustomUser, Category
 
 class TodoTests(TestCase):
 
@@ -25,3 +25,34 @@ class TodoTests(TestCase):
         self.assertEqual(author, 'testuser1')
         self.assertEqual(title, 'Todo title')
         self.assertEqual(body, 'Body content...')
+
+
+    def test_todo_counts(self):
+        counter = Todo.objects.all().count()
+        self.assertEqual(counter, int('1'))
+
+    # def test_todo_delete(self):
+        # todo = Todo.objects.get(id=1)
+        # todo.delete()
+        # todo2 = Todo.objects.get(id=1)
+        #
+
+
+    def test_todo_creation(self):
+        t = Todo.objects.get(id=1)
+        self.assertTrue(isinstance(t, Todo))
+        self.assertEqual(t.__str__(), t.title)
+
+class CategoryTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        testCat = Category.objects.create(
+            subject = 'Important',
+        )
+        testCat.save()
+
+    def test_cat_creation(self):
+        c = Category.objects.get(id=1)
+        self.assertTrue(isinstance(c, Category))
+        self.assertEqual(c.__str__(), c.subject)

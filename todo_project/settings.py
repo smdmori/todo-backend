@@ -50,9 +50,6 @@ INSTALLED_APPS = [
     
     # Local
     'todos.apps.TodosConfig',
-    # 'users.apps.UsersConfig',
-    # 'categories.apps.CategoriesConfig',
-    # 'fortesting.apps.FortestingConfig',
 ]
 
 MIDDLEWARE = [

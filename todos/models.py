@@ -8,6 +8,11 @@ class CustomUser(AbstractUser):
 class Category(models.Model):
     subject = models.CharField(max_length=100)
 
+    # def list_todos(self):
+        # q = Category.objects.get(id = self.id)
+        # q_todos = q.todo_set.all()
+        # return q_todos
+
     class Meta:
         verbose_name = ('Category')
         verbose_name_plural = ('Categories')    

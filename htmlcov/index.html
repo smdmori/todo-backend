@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Coverage report</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.ba-throttle-debounce.min.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.index_ready);
+    </script>
+</head>
+<body class="indexfile">
+<div id="header">
+    <div class="content">
+        <h1>Coverage report:
+            <span class="pc_cov">92%</span>
+        </h1>
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter..." />
+        </form>
+    </div>
+</div>
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">n</span>
+        <span class="key">s</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        <span class="key">c</span> &nbsp; change column sorting
+    </p>
+    </div>
+</div>
+<div id="index">
+    <table class="index">
+        <thead>
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left headerSortDown shortkey_n">Module</th>
+                <th class="shortkey_s">statements</th>
+                <th class="shortkey_m">missing</th>
+                <th class="shortkey_x">excluded</th>
+                <th class="right shortkey_c">coverage</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>156</td>
+                <td>13</td>
+                <td>0</td>
+                <td class="right" data-ratio="143 156">92%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr class="file">
+                <td class="name left"><a href="manage_py.html">manage.py</a></td>
+                <td>12</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="10 12">83%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todo_project___init___py.html">todo_project/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todo_project_asgi_py.html">todo_project/asgi.py</a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todo_project_settings_py.html">todo_project/settings.py</a></td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="22 22">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todo_project_urls_py.html">todo_project/urls.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todo_project_wsgi_py.html">todo_project/wsgi.py</a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos___init___py.html">todos/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_admin_py.html">todos/admin.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_apps_py.html">todos/apps.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_migrations_0001_initial_py.html">todos/migrations/0001_initial.py</a></td>
+                <td>10</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="10 10">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_migrations___init___py.html">todos/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_models_py.html">todos/models.py</a></td>
+                <td>25</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="25 25">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_permissions_py.html">todos/permissions.py</a></td>
+                <td>6</td>
+                <td>3</td>
+                <td>0</td>
+                <td class="right" data-ratio="3 6">50%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_serializers_py.html">todos/serializers.py</a></td>
+                <td>10</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="10 10">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_tests_py.html">todos/tests.py</a></td>
+                <td>34</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="34 34">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_urls_py.html">todos/urls.py</a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            <tr class="file">
+                <td class="name left"><a href="todos_views_py.html">todos/views.py</a></td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="11 11">100%</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</div>
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.2</a>,
+            created at 2020-07-13 20:01
+        </p>
+    </div>
+</div>
+</body>
+</html>
