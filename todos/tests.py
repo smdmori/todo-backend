@@ -9,7 +9,7 @@ class TodoTests(TestCase):
     def setUpTestData(cls):
         # Create a user
         testuser1 = get_user_model().objects.create_user(
-            username='testuser1', password='abc123')
+            username='testuser1', password='abc123', email='test@example.com')
         testuser1.save()
         
         # Create a todo
@@ -22,26 +22,31 @@ class TodoTests(TestCase):
         author = f'{todo.author}'
         title = f'{todo.title}'
         body = f'{todo.body}'
-        self.assertEqual(author, 'testuser1')
+        self.assertEqual(author, 'test@example.com')
         self.assertEqual(title, 'Todo title')
         self.assertEqual(body, 'Body content...')
 
 
     def test_todo_counts(self):
         counter = Todo.objects.all().count()
-        self.assertEqual(counter, int('1'))
-
-    # def test_todo_delete(self):
-        # todo = Todo.objects.get(id=1)
-        # todo.delete()
-        # todo2 = Todo.objects.get(id=1)
-        #
+        self.assertEqual(counter, int('1'))       
 
 
     def test_todo_creation(self):
         t = Todo.objects.get(id=1)
         self.assertTrue(isinstance(t, Todo))
         self.assertEqual(t.__str__(), t.title)
+
+
+    def test_todo_delete(self):
+        todo = Todo.objects.get(id=1)
+        todo.delete()
+        counter = Todo.objects.all().count()
+        self.assertEqual(counter, int('0'))
+        no_response = self.client.get('todos/1/')
+        self.assertEqual(no_response.status_code, 404)
+
+
 
 class CategoryTest(TestCase):
 
